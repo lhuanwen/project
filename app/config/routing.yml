@@ -1,7 +1,14 @@
-common:
-    resource: "@CommonBundle/Controller/"
-    type:     annotation
-    prefix:   /
+#common:
+#    resource: "@CommonBundle/Controller/"
+#    type:     annotation
+#    prefix:   /
+
+homepage:
+    path: /
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    defaults:
+        path: /app
+        permanent: true
 
 app:
     resource: '@AppBundle/Controller/'

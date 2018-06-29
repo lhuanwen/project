@@ -1,0 +1,32 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "demo",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "./node_modules/.bin/encore dev-server --hot",
+    "watch": "./node_modules/.bin/encore dev --watch",
+    "build": "./node_modules/.bin/encore production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lhuanwen/project.git"
+  },
+  "author": "leo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lhuanwen/project/issues"
+  },
+  "homepage": "https://github.com/lhuanwen/project#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.20.1",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.3",
+    "webpack-notifier": "^1.6.0"
+  }
+}
