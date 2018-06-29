@@ -22,9 +22,17 @@
     "url": "https://github.com/lhuanwen/project/issues"
   },
   "homepage": "https://github.com/lhuanwen/project#readme",
-  "dependencies": {},
+  "dependencies": {
+    "antd": "^3.6.4",
+    "babel-preset-react": "^6.24.1",
+    "moment": "^2.22.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
   "devDependencies": {
     "@symfony/webpack-encore": "^0.20.1",
+    "babel-plugin-import": "^1.8.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.3",
     "webpack-notifier": "^1.6.0"
