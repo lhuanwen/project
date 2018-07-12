@@ -11,9 +11,8 @@ namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class HomeController extends Controller
+class HomeController extends AbstractController
 {
     /**
      * @Route("/app", name="app.home")
@@ -21,8 +20,6 @@ class HomeController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('@App/App/index.html.twig', [
-            'title' => 'symfony demo'
-        ]);
+        return $this->renderReact();
     }
 }
