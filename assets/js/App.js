@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { LocaleProvider } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import AppRouter from './AppRouter'
@@ -12,4 +13,7 @@ const App = () => {
     );
 };
 
-export default App;
+ReactDOM.render(
+    <App/>,
+    document.getElementById('root')
+);
