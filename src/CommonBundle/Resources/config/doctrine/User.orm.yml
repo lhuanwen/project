@@ -1,0 +1,20 @@
+CommonBundle\Entity\User:
+    type: entity
+    table: user
+    repositoryClass: CommonBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: auto
+    fields:
+        username:
+            type: string
+            nullable: true
+            unique: true
+        salt:
+            type: string
+            nullable: false
+        password:
+            type: string
+            nullable: true
