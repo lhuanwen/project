@@ -27,7 +27,15 @@ Encore
     .enableVersioning(Encore.isProduction())
 
     // allow sass/scss files to be processed
-    .enableSassLoader()
+    // .enableSassLoader()
+
+    // less
+    // .enableLessLoader()
+    .addLoader({
+        test: /\.less$/,
+        loader: 'style-loader!css-loader?modules&localIdentName=[path][name]__[local]--[hash:base64:5]!less-loader',
+        exclude: /node_modules/,
+    })
 ;
 
 // export the final configuration
