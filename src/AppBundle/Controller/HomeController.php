@@ -11,6 +11,7 @@ namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Response;
 
 class HomeController extends AbstractController
 {
@@ -20,6 +21,7 @@ class HomeController extends AbstractController
      */
     public function indexAction()
     {
-        return $this->renderReact();
+        return new Response('<html><body>App page!</body></html>');
+//        return $this->renderReact();
     }
 }

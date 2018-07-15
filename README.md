@@ -10,3 +10,10 @@ bundle
 bin/console generate:bundle
 
 composer dumpautoload
+
+table
+=======
+
+bin/console doctrine:generate:entities CommonBundle --no-backup
+
+bin/console doctrine:schema:update --dump-sql

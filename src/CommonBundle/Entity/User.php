@@ -34,6 +34,11 @@ class User implements UserInterface
      */
     private $role = ['ROLE_MEMBER'];
 
+    public function __construct()
+    {
+        $this->salt = md5(uniqid(null, true));
+    }
+
     /**
      * @return array
      */
