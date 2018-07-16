@@ -6,9 +6,10 @@ security:
 
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
-        member:
+        app_user:
             entity:
                 class: CommonBundle\Entity\User
+                property: username
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -16,16 +17,16 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-#        app:
-#            pattern: ^/app
-#            anonymous: true
-#            guard:
-#                authenticators:
-#                    - CommonBundle\Security\Guard\FormLoginAuthenticator
-#            provider:  member
-#            logout:
-#                path: /app/logout
-#                target: /app/login
+        app:
+            pattern: ^/app
+            anonymous: true
+            guard:
+                authenticators:
+                    - common.security.guard.form_login
+            provider:  app_user
+            logout:
+                path: /app/logout
+                target: /app/login
 
         main:
             anonymous: ~
@@ -37,6 +38,6 @@ security:
             # https://symfony.com/doc/current/security/form_login_setup.html
             #form_login: ~
 
-#    access_control:
-#        - { path: ^/app/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-#        - { path: ^/app, roles: ROLE_MEMBER }
+    access_control:
+        - { path: ^/app/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/app, roles: IS_AUTHENTICATED_FULLY }

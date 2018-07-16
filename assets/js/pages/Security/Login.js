@@ -1,6 +1,6 @@
 import React from 'react';
-import { Form, Icon, Input, Button } from 'antd';
-import axios from 'axios';
+import { Form, Icon, Input, Button, message } from 'antd';
+import axios from '../../libs/axios';
 import styles from './login.less';
 
 const FormItem = Form.Item;
@@ -12,8 +12,14 @@ class Login extends React.Component {
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
-                const response = axios.post('/app/login', values);
-                console.log(response);
+                axios.post('/app/login_check', values).then(response => {
+                    if (response.code === 0) {
+                        message.success(response.message);
+                        window.location = response.data.redirect;
+                    } else {
+                        message.error(response.message);
+                    }
+                });
             }
         });
     }
