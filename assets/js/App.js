@@ -4,7 +4,7 @@ import { LocaleProvider } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import AppRouter from './AppRouter'
 import Login from './pages/Security/Login';
-// import '../css/app.less';
+import '../css/app.less';
 
 const App = () => {
     return (
